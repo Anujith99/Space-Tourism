@@ -1,10 +1,14 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { AnimatePresence, motion } from "framer-motion"
 
 import Logo from "../../images/logo.svg"
 import HamburgerIcon from "../../images/icon-hamburger.svg"
+import CloseIcon from "../../images/icon-close.svg"
 
 import "./navbar.scss"
+
+const MotionLink = motion(Link)
 
 const NAV_LINKS = [
   {
@@ -49,6 +53,42 @@ const Navbar = () => {
         <div className="mobile-icon" onClick={() => setIsMenuOpen(true)}>
           {!isMenuOpen && <HamburgerIcon />}
         </div>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ x: "280px" }}
+              animate={{ x: "0" }}
+              exit={{ x: "280px" }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="mobile-menu"
+            >
+              <div
+                className="mobile-menu-header"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <CloseIcon />
+              </div>
+              {NAV_LINKS.map((link, index) => (
+                <MotionLink
+                  activeStyle={{ borderRight: "2px solid white" }}
+                  key={index}
+                  className="mobile-link"
+                  to={link.to}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.2 * (index + 1),
+                    ease: "easeInOut",
+                  }}
+                >
+                  <span>{"0" + index + "  "}</span>
+                  {link.text}
+                </MotionLink>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </>
   )

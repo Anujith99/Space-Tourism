@@ -40,6 +40,7 @@
 
   .nav-link {
     font-family: "Barlow Condensed";
+    font-size: 1rem;
     span {
       display: inline;
       font-weight: bold;
@@ -47,7 +48,6 @@
       margin-right: 3px;
       font-size: 1rem;
       letter-spacing: 2.7px;
-      background: initial;
     }
     @include media-query-tablet {
       display: flex;
@@ -57,7 +57,6 @@
       height: 100%;
       margin-left: 0.4rem;
       margin-right: 0.4rem;
-      background: initial;
       font-size: 0.8rem;
       letter-spacing: 2.3625px;
       border-bottom: 2px solid transparent;
@@ -83,7 +82,6 @@
         margin-right: 3px;
         font-size: 1rem;
         letter-spacing: 2.7px;
-        background: initial;
       }
     }
   }
@@ -93,5 +91,46 @@
   cursor: pointer;
   @include media-query-tablet {
     display: none;
+  }
+}
+
+.mobile-menu {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 280px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(81.5485px);
+  flex-direction: column;
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-self: flex-end;
+  padding: 4%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.mobile-link {
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+  font-family: "Barlow Condensed";
+  padding: 10px 10px 10px 25px;
+  border-right: 2px solid transparent;
+  margin-top: 12px;
+
+  &:hover {
+    border-right: 2px solid rgba($color: #fff, $alpha: 0.5);
+  }
+  span {
+    display: inline;
+    font-weight: bold;
+    font-family: "Barlow Condensed";
+    font-size: 1rem;
+    letter-spacing: 2.7px;
   }
 }
