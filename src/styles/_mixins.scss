@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+@mixin media-query-desktop {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin media-query-tablet {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}
+// @mixin media-query-mobile {
+//   @media screen and (min-width: $mobile) {
+//     @content;
+//   }
+// }

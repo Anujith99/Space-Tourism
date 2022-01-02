@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&display=swap");
+
+@import "_variables.scss";
+@import "_mixins.scss";
+
+@font-face {
+  font-family: "Bellefair";
+  src: url("../fonts/bellefair.regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: $white;
+  font-family: "Bellefair", serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: "100%";
+}
+
+.heading-1 {
+  font-size: 80px;
+  @include media-query-tablet {
+    font-size: 150px;
+  }
+}
+
+.heading-2 {
+  font-size: 56px;
+  @include media-query-tablet {
+    font-size: 80px;
+  }
+  @include media-query-desktop {
+    font-size: 100px;
+  }
+}
+
+.heading-3 {
+  font-size: 24px;
+  @include media-query-tablet {
+    font-size: 40px;
+  }
+  @include media-query-desktop {
+    font-size: 56px;
+  }
+}
+
+.heading-4 {
+  font-size: 32px;
+}
+
+.heading-5 {
+  font-family: "Barlow Condensed", sans-serif;
+  color: $secondary;
+
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  @include media-query-tablet {
+    font-size: 20px;
+    letter-spacing: 3.375px;
+  }
+  @include media-query-desktop {
+    font-size: 28px;
+    letter-spacing: 4.725px;
+  }
+}
+
+.sub-heading-1 {
+  font-size: 28px;
+}
+
+.sub-heading-2 {
+  font-family: "Barlow Condensed";
+  color: $secondary;
+
+  font-size: 14px;
+  letter-spacing: 2.3625px;
+}
+
+.content {
+  font-family: "Barlow";
+  font-size: 15px;
+  line-height: 25px;
+
+  @include media-query-tablet {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  @include media-query-desktop {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
