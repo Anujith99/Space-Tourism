@@ -1,0 +1,10 @@
+@import "_mixins.scss";
+
+.bg-image-technology {
+  $bg-images: (
+    "mobile": "../images/technology/background-technology-mobile.jpg",
+    "tablet": "../images/technology/background-technology-tablet.jpg",
+    "desktop": "../images/technology/background-technology-desktop.jpg",
+  );
+  @include response-bg-image($bg-images);
+}

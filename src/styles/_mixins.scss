@@ -15,3 +15,22 @@
 //     @content;
 //   }
 // }
+
+@mixin response-bg-image($images) {
+  $mobile-bg: map-get($images, "mobile");
+  $tablet-bg: map-get($images, "tablet");
+  $desktop-bg: map-get($images, "desktop");
+
+  background: url($mobile-bg) no-repeat center center fixed, $primary;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @include media-query-tablet {
+    background: url($tablet-bg) no-repeat center center fixed, $primary;
+  }
+
+  @include media-query-desktop {
+    background: url($desktop-bg) no-repeat center center fixed, $primary;
+  }
+}

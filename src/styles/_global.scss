@@ -18,9 +18,10 @@
 }
 
 html,
-body {
-  min-height: 100%;
-  background-color: black;
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 .heading-1 {
@@ -95,4 +96,8 @@ body {
     font-size: 18px;
     line-height: 32px;
   }
+}
+
+.layout {
+  height: 100%;
 }

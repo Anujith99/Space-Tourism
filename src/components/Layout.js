@@ -1,9 +1,9 @@
 import React from "react"
 import Navbar from "./Navbar/Navbar"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, bgClass }) => {
   return (
-    <div>
+    <div className={`layout ${bgClass}`}>
       <Navbar />
       <div>{children}</div>
     </div>

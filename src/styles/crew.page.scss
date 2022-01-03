@@ -1,0 +1,10 @@
+@import "_mixins.scss";
+
+.bg-image-crew {
+  $bg-images: (
+    "mobile": "../images/crew/background-crew-mobile.jpg",
+    "tablet": "../images/crew/background-crew-tablet.jpg",
+    "desktop": "../images/crew/background-crew-desktop.jpg",
+  );
+  @include response-bg-image($bg-images);
+}

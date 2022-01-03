@@ -1,0 +1,10 @@
+@import "_mixins.scss";
+
+.bg-image-home {
+  $bg-images: (
+    "mobile": "../images/home/background-home-mobile.jpg",
+    "tablet": "../images/home/background-home-tablet.jpg",
+    "desktop": "../images/home/background-home-desktop.jpg",
+  );
+  @include response-bg-image($bg-images);
+}

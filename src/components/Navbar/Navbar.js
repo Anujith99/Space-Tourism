@@ -37,6 +37,7 @@ const Navbar = () => {
         <div className="logo">
           <Logo />
         </div>
+        <div className="navbar-line" />
         <div className="nav-links">
           {NAV_LINKS.map((link, index) => (
             <Link

@@ -14,8 +14,23 @@
   }
 
   @include media-query-desktop {
-    margin-top: 30px;
+    padding-top: 30px;
     padding-left: 4%;
+  }
+}
+
+.navbar-line {
+  display: none;
+
+  @include media-query-desktop {
+    display: inline-block;
+    position: absolute;
+    min-width: 25%;
+    left: 7%;
+    margin-left: 4%;
+    height: 1px;
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    z-index: 10;
   }
 }
 
