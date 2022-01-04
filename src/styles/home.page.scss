@@ -1,4 +1,5 @@
 @import "_mixins.scss";
+@import "_variables.scss";
 
 .bg-image-home {
   $bg-images: (
@@ -7,4 +8,116 @@
     "desktop": "../images/home/background-home-desktop.jpg",
   );
   @include response-bg-image($bg-images);
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100%;
+  max-width: 90%;
+  @include media-query-tablet {
+    max-width: 95%;
+  }
+
+  @include media-query-desktop {
+    max-width: 92%;
+  }
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  @include media-query-tablet {
+    padding: 6% 0;
+  }
+
+  @include media-query-desktop {
+    flex-direction: row;
+    position: absolute;
+    bottom: 10%;
+    width: 90%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+  }
+}
+
+.content-text-container {
+  @include media-query-desktop {
+    margin-right: 25px;
+  }
+}
+
+.home-para {
+  @include media-query-tablet {
+    max-width: 450px;
+  }
+
+  @include media-query-desktop {
+    max-width: 444px;
+  }
+}
+
+@mixin create-circle($radius) {
+  width: $radius;
+  height: $radius;
+  border-radius: calc($radius/2);
+}
+
+.home-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  z-index: 1;
+  cursor: pointer;
+  @include create-circle(180px);
+  &:hover {
+    .home-button-outline {
+      transform: scale(1.2);
+    }
+  }
+  @include media-query-tablet {
+    @include create-circle(220px);
+    // margin-top: 15%;
+  }
+
+  @include media-query-desktop {
+    @include create-circle(240px);
+    &:hover {
+      .home-button-outline {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
+
+.home-button-outline {
+  background-color: rgba($color: $white, $alpha: 0.1);
+  position: absolute;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @include create-circle(180px);
+  @include media-query-tablet {
+    @include create-circle(220px);
+  }
+  @include media-query-desktop {
+    @include create-circle(240px);
+  }
+}
+
+.home-button-text {
+  color: $primary;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  z-index: 2;
+  @include media-query-tablet {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
 }

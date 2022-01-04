@@ -40,7 +40,7 @@
   @include media-query-tablet {
     display: flex;
     align-items: center;
-    height: 96px;
+    height: 86px;
     width: 70%;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
@@ -49,6 +49,7 @@
   }
 
   @include media-query-desktop {
+    height: 96px;
     padding-left: 4%;
     padding-right: 3%;
   }
@@ -114,11 +115,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
+  min-height: 100%;
   width: 280px;
   background-color: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(81.5485px);
   flex-direction: column;
+  z-index: 5;
 }
 
 .mobile-menu-header {
