@@ -87,6 +87,7 @@ body,
   font-family: "Barlow";
   font-size: 15px;
   line-height: 25px;
+  color: $secondary;
 
   @include media-query-tablet {
     font-size: 16px;
@@ -99,5 +100,6 @@ body,
 }
 
 .layout {
+  position: relative;
   height: 100%;
 }

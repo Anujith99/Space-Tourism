@@ -4,10 +4,12 @@ import Heading from "../components/typography/Heading"
 import Content from "../components/typography/Content"
 import "../styles/_global.scss"
 import "../styles/home.page.scss"
+import { useBackground } from "../hooks/useBackground"
 
 export default function Home() {
+  useBackground("bg-image-home")
   return (
-    <Layout bgClass={"bg-image-home"}>
+    <Layout>
       <div className="container">
         <div className="content-container">
           <div className="content-text-container">

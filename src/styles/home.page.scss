@@ -1,7 +1,7 @@
 @import "_mixins.scss";
 @import "_variables.scss";
 
-.bg-image-home {
+html#bg-image-home {
   $bg-images: (
     "mobile": "../images/home/background-home-mobile.jpg",
     "tablet": "../images/home/background-home-tablet.jpg",
@@ -30,15 +30,16 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: 6% 0;
 
   @include media-query-tablet {
-    padding: 6% 0;
+    padding: 5% 0;
   }
 
   @include media-query-desktop {
     flex-direction: row;
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     width: 90%;
     padding: 0;
     justify-content: space-between;
@@ -67,6 +68,21 @@
   width: $radius;
   height: $radius;
   border-radius: calc($radius/2);
+}
+
+.content-button-container {
+  position: absolute;
+  bottom: 8%;
+
+  @include media-query-tablet {
+    position: relative;
+    padding-top: 15%;
+    bottom: 0%;
+  }
+
+  @include media-query-desktop {
+    position: relative;
+  }
 }
 
 .home-button {
