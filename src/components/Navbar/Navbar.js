@@ -57,10 +57,10 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ x: "280px" }}
-              animate={{ x: "0" }}
-              exit={{ x: "280px" }}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "backInOut" }}
               className="mobile-menu"
             >
               <div

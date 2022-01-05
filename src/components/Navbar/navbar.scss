@@ -1,12 +1,21 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+.logo,
+.mobile-icon {
+  padding: 4%;
+
+  @include media-query-tablet {
+    padding: 0;
+  }
+}
+
 .nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 4%;
+  padding: 0%;
 
   @include media-query-tablet {
     padding: 0;
@@ -126,7 +135,7 @@
 .mobile-menu-header {
   display: flex;
   align-self: flex-end;
-  padding: 4%;
+  padding: 4% 5%;
   margin-bottom: 15px;
   margin-top: 15px;
   cursor: pointer;
