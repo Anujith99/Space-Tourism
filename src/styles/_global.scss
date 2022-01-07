@@ -33,6 +33,7 @@ body,
 
 .heading-2 {
   font-size: 56px;
+  text-transform: uppercase;
   @include media-query-tablet {
     font-size: 80px;
   }
@@ -73,6 +74,7 @@ body,
 
 .sub-heading-1 {
   font-size: 28px;
+  text-transform: uppercase;
 }
 
 .sub-heading-2 {
@@ -81,6 +83,21 @@ body,
 
   font-size: 14px;
   letter-spacing: 2.3625px;
+}
+
+.num-heading {
+  @extend .heading-5;
+  font-weight: 700;
+  color: rgba($color: $white, $alpha: 0.4);
+  margin-right: 12px;
+
+  @include media-query-tablet {
+    margin-right: 18px;
+  }
+
+  @include media-query-desktop {
+    margin-right: 24px;
+  }
 }
 
 .content {

@@ -5,12 +5,13 @@ import Content from "../components/typography/Content"
 import "../styles/_global.scss"
 import "../styles/home.page.scss"
 import { useBackground } from "../hooks/useBackground"
+import { Link } from "gatsby"
 
 export default function Home() {
   useBackground("bg-image-home")
   return (
     <Layout>
-      <div className="container">
+      <div className="home-container">
         <div className="content-container">
           <div className="content-text-container">
             <Heading type={"heading-5"}>SO, YOU WANT TO TRAVEL TO</Heading>
@@ -23,10 +24,12 @@ export default function Home() {
             </Content>
           </div>
           <div className="content-button-container">
-            <div className="home-button">
-              <p className="home-button-text">EXPLORE</p>
-              <div className="home-button-outline" />
-            </div>
+            <Link to="/destinations">
+              <div className="home-button">
+                <p className="home-button-text">EXPLORE</p>
+                <div className="home-button-outline" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ html#bg-image-home {
   @include response-bg-image($bg-images);
 }
 
-.container {
+.home-container {
   display: flex;
   margin: 0 auto;
   min-height: 100%;
@@ -92,7 +92,7 @@ html#bg-image-home {
   align-items: center;
   background-color: $white;
   z-index: 1;
-  cursor: pointer;
+  // cursor: pointer;
   @include create-circle(180px);
   &:hover {
     .home-button-outline {
