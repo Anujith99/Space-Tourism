@@ -7,55 +7,59 @@ import "../styles/_global.scss"
 import "../styles/crew.page.scss"
 import { useBackground } from "../hooks/useBackground"
 import { GatsbyImage } from "gatsby-plugin-image"
+import MetaData from "../components/MetaData"
 
 export default function Crew({ data }) {
   const crew = data.allCrewJson.nodes
   const [selectedMember, setSelectedMember] = useState(0)
   useBackground("bg-image-crew")
   return (
-    <Layout>
-      <div className="crew-container">
-        <div className="page-title">
-          <Heading type={"num-heading"}>02</Heading>
-          <Heading type={"heading-5"}>MEET YOUR CREW</Heading>
-        </div>
-        <div className="crew-content-container">
-          <div className="crew-content-description">
-            <Heading style={"crew-role"} type={"heading-4"}>
-              {crew[selectedMember].role}
-            </Heading>
-            <Heading style={"crew-name"} type={"heading-3"}>
-              {crew[selectedMember].name}
-            </Heading>
-            <Content contentStyle={"crew-bio"}>
-              {crew[selectedMember].bio}
-            </Content>
-            <div className="crew-dots-container">
-              {[...Array(4)].map((crew, index) => (
-                <div
-                  key={index}
-                  onClick={() => setSelectedMember(index)}
-                  className={`crew-dot-btn ${
-                    selectedMember === index ? "active" : ""
-                  }`}
+    <>
+      <MetaData title={"Crew"} description={"Meet Your Crew"} />
+      <Layout>
+        <div className="crew-container">
+          <div className="page-title">
+            <Heading type={"num-heading"}>02</Heading>
+            <Heading type={"heading-5"}>MEET YOUR CREW</Heading>
+          </div>
+          <div className="crew-content-container">
+            <div className="crew-content-description">
+              <Heading style={"crew-role"} type={"heading-4"}>
+                {crew[selectedMember].role}
+              </Heading>
+              <Heading style={"crew-name"} type={"heading-3"}>
+                {crew[selectedMember].name}
+              </Heading>
+              <Content contentStyle={"crew-bio"}>
+                {crew[selectedMember].bio}
+              </Content>
+              <div className="crew-dots-container">
+                {[...Array(4)].map((crew, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedMember(index)}
+                    className={`crew-dot-btn ${
+                      selectedMember === index ? "active" : ""
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="crew-content-image-container">
+              <div className="crew-image">
+                <GatsbyImage
+                  image={
+                    crew[selectedMember].images.webp.childImageSharp
+                      .gatsbyImageData
+                  }
+                  alt={crew[selectedMember].name}
                 />
-              ))}
-            </div>
-          </div>
-          <div className="crew-content-image-container">
-            <div className="crew-image">
-              <GatsbyImage
-                image={
-                  crew[selectedMember].images.webp.childImageSharp
-                    .gatsbyImageData
-                }
-                alt={crew[selectedMember].name}
-              />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 
