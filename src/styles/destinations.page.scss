@@ -27,11 +27,6 @@ html#bg-image-destinations {
   }
 }
 
-.destinations-title {
-  display: flex;
-  flex-direction: row;
-}
-
 .destination-content-container {
   display: flex;
   width: 100%;
@@ -70,6 +65,7 @@ html#bg-image-destinations {
   @include media-query-desktop {
     width: 50%;
     justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
@@ -123,6 +119,7 @@ html#bg-image-destinations {
 .destination-tab-content {
   text-align: center;
   @include media-query-desktop {
+    text-align: left;
     padding-top: 4%;
     max-width: 445px;
   }

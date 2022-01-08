@@ -15,7 +15,7 @@ export default function Destinations({ data }) {
   return (
     <Layout>
       <div className="destinations-container">
-        <div className="destinations-title">
+        <div className="page-title">
           <Heading type={"num-heading"}>01</Heading>
           <Heading type={"heading-5"}>PICK YOUR DESTINATION</Heading>
         </div>

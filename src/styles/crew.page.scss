@@ -1,4 +1,5 @@
 @import "_mixins.scss";
+@import "_variables.scss";
 
 html#bg-image-crew {
   $bg-images: (
@@ -7,4 +8,137 @@ html#bg-image-crew {
     "desktop": "../images/crew/background-crew-desktop.jpg",
   );
   @include response-bg-image($bg-images);
+}
+
+.crew-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100%;
+  max-width: 90%;
+  padding: 3% 4%;
+  @include media-query-tablet {
+    max-width: 95%;
+  }
+
+  @include media-query-desktop {
+    padding: 2% 5%;
+    max-width: 92%;
+  }
+}
+
+.crew-content-container {
+  display: flex;
+  margin-top: 2%;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+
+  @include media-query-tablet {
+    margin-top: 4%;
+    flex-direction: column;
+  }
+
+  @include media-query-desktop {
+    margin-top: 6%;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+  }
+}
+
+.crew-content-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6%;
+
+  @include media-query-tablet {
+    margin-bottom: 5%;
+  }
+
+  @include media-query-desktop {
+    align-items: flex-start;
+    margin-bottom: 0%;
+  }
+}
+
+.crew-role {
+  color: rgba($color: $white, $alpha: 0.5);
+}
+
+.crew-name {
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.crew-bio {
+  max-width: 445px;
+}
+
+.crew-dots-container {
+  display: flex;
+  margin-bottom: 6%;
+  order: -1;
+
+  @include media-query-tablet {
+    order: 0;
+    margin-top: 5%;
+  }
+}
+
+.crew-dot-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: rgba($color: $white, $alpha: 0.17);
+  margin: 0 6px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+
+  @include media-query-tablet {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    background-color: rgba($color: $white, $alpha: 0.5);
+  }
+
+  &.active {
+    background-color: rgba($color: $white, $alpha: 1);
+  }
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.crew-content-image-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba($color: $white, $alpha: 0.5);
+
+  margin-top: 6%;
+  margin-bottom: 4%;
+
+  @include media-query-tablet {
+    margin: 0;
+  }
+
+  @include media-query-desktop {
+    right: 0%;
+    width: 55%;
+  }
+}
+
+.crew-image {
+  max-width: 50%;
 }
