@@ -9,6 +9,7 @@ import { Link } from "gatsby"
 
 export default function Home() {
   useBackground("bg-image-home")
+  //ADD REACT-HELMET AND FAVICON
   return (
     <Layout>
       <div className="home-container">
