@@ -3,7 +3,7 @@
 This is my submission for the [Space Tourism Multi-Page
 challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3/hub/space-tourism-multipage-website-63ZRYlngr) on Frontend Mentor.
 
-Click [here]() for the live demo.
+Click [here](https://its-space-tourism.netlify.app/) for the live demo.
 
 I decided to use this challenge as an opportunity to learn
 the much talked about [GatsbyJS](https://www.gatsbyjs.com/) framework. I have been using
