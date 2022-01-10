@@ -92,12 +92,12 @@ html#bg-image-technology {
   border: 1px solid rgba($color: $white, $alpha: 0.5);
   cursor: pointer;
   transition: 0.4s ease-in-out;
-
+  font-size: 24px;
   width: 60px;
   height: 60px;
   border-radius: 30px;
   margin: 0px 8px;
-  padding-left: 2px;
+  padding-left: 0px;
 
   &:first-child {
     margin-left: 0;

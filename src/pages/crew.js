@@ -1,18 +1,39 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useSwipeable } from "react-swipeable"
+
 import Layout from "../components/Layout"
 import Heading from "../components/typography/Heading"
 import Content from "../components/typography/Content"
+import { useBackground } from "../hooks/useBackground"
+import MetaData from "../components/MetaData"
+
 import "../styles/_global.scss"
 import "../styles/crew.page.scss"
-import { useBackground } from "../hooks/useBackground"
-import { GatsbyImage } from "gatsby-plugin-image"
-import MetaData from "../components/MetaData"
 
 export default function Crew({ data }) {
   const crew = data.allCrewJson.nodes
   const [selectedMember, setSelectedMember] = useState(0)
   useBackground("bg-image-crew")
+
+  const handleSwipe = dir => {
+    let updatedSlide
+    if (dir < 0) {
+      updatedSlide = selectedMember === 0 ? crew.length - 1 : selectedMember - 1
+    } else {
+      updatedSlide = selectedMember === crew.length - 1 ? 0 : selectedMember + 1
+    }
+    setSelectedMember(updatedSlide)
+  }
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe(-1),
+    onSwipedRight: () => handleSwipe(1),
+    trackMouse: false,
+    trackTouch: true,
+  })
+
   return (
     <>
       <MetaData title={"Crew"} description={"Meet Your Crew"} />
@@ -45,7 +66,7 @@ export default function Crew({ data }) {
                 ))}
               </div>
             </div>
-            <div className="crew-content-image-container">
+            <div {...handlers} className="crew-content-image-container">
               <div className="crew-image">
                 <GatsbyImage
                   image={
