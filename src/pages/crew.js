@@ -19,7 +19,7 @@ export default function Crew({ data }) {
 
   const handleSwipe = dir => {
     let updatedSlide
-    if (dir < 0) {
+    if (dir > 0) {
       updatedSlide = selectedMember === 0 ? crew.length - 1 : selectedMember - 1
     } else {
       updatedSlide = selectedMember === crew.length - 1 ? 0 : selectedMember + 1
